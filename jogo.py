@@ -142,9 +142,52 @@ def questao_para_texto (questao, id):
   
   return '----------------------------------------\nQUESTAO {}\n\n{}\n\nRESPOSTAS:\nA: {}\nB: {}\nC: {}\nD: {}'.format(id, questao['titulo'], questao['opcoes']['A'], questao['opcoes']['B'], questao['opcoes']['C'], questao['opcoes']['D'])
 
+def gera_ajuda (questao):
+
+  opcoes = []
+  for j in questao['opcoes'].values():
+    opcoes.append(j)
+
+  opcoes.remove(questao['opcoes'][questao['correta']])
+
+  x = random.randint(1,2)
+
+  if x == 1:
+    return '''DICA:\nOpções certamente erradas: {}'''.format(random.choice(opcoes))
+
+  else:
+    questoes_sorteadas = []
+    questoes_sorteadas.append(random.choice(opcoes))
+    i = True
+    while i:
+        questao_inedita = random.choice(opcoes)
+        if questao_inedita not in questoes_sorteadas:
+          questoes_sorteadas.append(questao_inedita)
+          i = False
+        else:
+          i = i
+    return '''DICA:\nOpções certamente erradas: {} | {}'''.format(questoes_sorteadas[0], questoes_sorteadas[1])
+
 while x < 3:
   id+=1
   x += 1
-  print (questao_para_texto(sorteia_questao_inedida (questoes, nivel, questoes_sorteadas), id))
+
+  questao = sorteia_questao_inedida (questoes, nivel, questoes_sorteadas)
+
+  print (questao_para_texto(questao, id))
   resposta = input('Qual sua resposta?! ')
 
+  if resposta == questao['correta']:
+      print ('Parabéns, você acertou!')
+
+  elif resposta == 'ajuda':
+    print (gera_ajuda (questao))
+
+  elif resposta == 'pula':
+    break
+
+  elif resposta == 'parar':
+    x = 3 
+
+  elif resposta != questao['correta']:
+      print ('Você errou!')
