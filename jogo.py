@@ -146,4 +146,5 @@ while x < 3:
   id+=1
   x += 1
   print (questao_para_texto(sorteia_questao_inedida (questoes, nivel, questoes_sorteadas), id))
+  resposta = input('Qual sua resposta?! ')
 
