@@ -1,3 +1,5 @@
+#FALTA COLOCAR PONTUACAO
+
 import random
 
 questoes = {
@@ -119,11 +121,6 @@ print('O jogo vai começar! Vamos para a primeira questão!')
 print('Vamos começar pelo nível fácil!')
 input ('Aperte ENTER para continuar... ')
 
-questoes_sorteadas = []
-nivel = 'facil'
-id = 0
-x = 0
-
 def sorteia_questao_inedida (questoes, nivel, questoes_sorteadas):
     
     i = True
@@ -168,6 +165,14 @@ def gera_ajuda (questao):
           i = i
     return '''DICA:\nOpções certamente erradas: {} | {}'''.format(questoes_sorteadas[0], questoes_sorteadas[1])
 
+questoes_sorteadas = []
+nivel = 'facil'
+id = 0
+x = 0
+parar = 0
+
+#NIVEL FÁCIL
+
 while x < 3:
   id+=1
   x += 1
@@ -181,13 +186,127 @@ while x < 3:
       print ('Parabéns, você acertou!')
 
   elif resposta == 'ajuda':
-    print (gera_ajuda (questao))
+    print (gera_ajuda (questao)) #tem que repetir a questão
+    input ('Aperte ENTER para continuar... ')
+
+    print (questao_para_texto(questao, id))
+    resposta = input('Qual sua resposta?! ')
+
+    if resposta == questao['correta']:
+      print ('Parabéns, você acertou!')
+    elif resposta == 'parar':
+      x = 3 #tem que parar o jogo
+    elif resposta != questao['correta']:
+      print ('Você errou!')
 
   elif resposta == 'pula':
     break
 
   elif resposta == 'parar':
-    x = 3 
+    x = 3
+    parar = 1 #tem que parar o jogo
 
   elif resposta != questao['correta']:
       print ('Você errou!')
+
+  input ('Aperte ENTER para continuar... ')
+
+#NIVEL MÉDIO
+
+if parar != 1: 
+
+  print('Vamos agora para as de nível médio!')
+  input ('Aperte ENTER para continuar... ')
+
+  nivel = 'medio'
+  x = 0
+  
+while x < 3:
+  id+=1
+  x += 1
+
+  questao = sorteia_questao_inedida (questoes, nivel, questoes_sorteadas)
+
+  print (questao_para_texto(questao, id))
+  resposta = input('Qual sua resposta?! ')
+
+  if resposta == questao['correta']:
+      print ('Parabéns, você acertou!')
+
+  elif resposta == 'ajuda':
+    print (gera_ajuda (questao)) 
+    input ('Aperte ENTER para continuar... ')
+
+    print (questao_para_texto(questao, id))
+    resposta = input('Qual sua resposta?! ')
+
+    if resposta == questao['correta']:
+      print ('Parabéns, você acertou!')
+    elif resposta == 'parar':
+      x = 3 
+      parar = 1
+    elif resposta != questao['correta']:
+      print ('Você errou!')
+
+  elif resposta == 'pula':
+    break
+
+  elif resposta == 'parar':
+    x = 3
+    parar = 1 #tem que parar o jogo
+
+  elif resposta != questao['correta']:
+      print ('Você errou!')
+
+  input ('Aperte ENTER para continuar... ')
+
+#NIVEL DIFÍCIL
+
+if parar != 1: 
+
+  print('Vamos agora para as de nível difícil!')
+  input ('Aperte ENTER para continuar... ')
+
+  nivel = 'dificil'
+  x = 0
+  
+while x < 3:
+  id+=1
+  x += 1
+
+  questao = sorteia_questao_inedida (questoes, nivel, questoes_sorteadas)
+
+  print (questao_para_texto(questao, id))
+  resposta = input('Qual sua resposta?! ')
+
+  if resposta == questao['correta']:
+      print ('Parabéns, você acertou!')
+
+  elif resposta == 'ajuda':
+    print (gera_ajuda (questao)) 
+    input ('Aperte ENTER para continuar... ')
+
+    print (questao_para_texto(questao, id))
+    resposta = input('Qual sua resposta?! ')
+
+    if resposta == questao['correta']:
+      print ('Parabéns, você acertou!')
+    elif resposta == 'parar':
+      x = 3 
+      parar = 1
+    elif resposta != questao['correta']:
+      print ('Você errou!')
+
+  elif resposta == 'pula':
+    break
+
+  elif resposta == 'parar':
+    x = 3
+    parar = 1 #tem que parar o jogo
+
+  elif resposta != questao['correta']:
+      print ('Você errou!')
+
+  input ('Aperte ENTER para continuar... ')
+
+print ('Parabéns! Você chegou ao fim do jogo!')
