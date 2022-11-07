@@ -159,5 +159,17 @@ questoes = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'correta': 'D'}
         ]
 
+print('Olá! Bem-vindo ao jogo!')
 nome = input('Qual o seu nome? ')
-print('Olá, {nome}! Bem-vindo ao jogo!')
+
+print ('Ok {0}, você tem direito a pular 3 vezes e 2 ajudas!'.format(nome))
+print ('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!')
+
+input ('Aperte ENTER para continuar... ')
+
+print('O jogo vai começar! Vamos para a primeira questão!')
+
+
+
+
+
