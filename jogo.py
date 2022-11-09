@@ -1,4 +1,8 @@
 #FALTA COLOCAR PONTUACAO
+#ENCERRAR O JOGO QUANDO ERRA
+#QUANDO COLOCAR OPCAO INVÁLIDA, FALAR QUE É INVÁLIDA, E NAO FALAR Q ERROU
+#COLORIR O TERMINAL
+
 import random
 
 questoes = [{'titulo': 'Qual o resultado da operação 57 + 32?',
