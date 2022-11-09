@@ -299,13 +299,14 @@ if quest_corretas == {}:
       return '''DICA:\nOpções certamente erradas: {} | {}'''.format(questoes_sorteadas[0], questoes_sorteadas[1])
 
   questoes_sorteadas = []
-  nivel = 'facil'
   id = 0
-  x = 0
   parar = 0
   ajudas = 0
 
   # NIVEL FÁCIL ------------------------------------------------------------------------
+
+  x = 0
+  nivel = 'facil'
 
   while x < 3:
     id+=1
@@ -361,49 +362,49 @@ if quest_corretas == {}:
     nivel = 'medio'
     x = 0
     
-  while x < 3:
-    id+=1
-    x += 1
+    while x < 3:
+      id+=1
+      x += 1
 
-    questao = sorteia_questao_inedida (questoes, nivel, questoes_sorteadas)
+      questao = sorteia_questao_inedida (questoes, nivel, questoes_sorteadas)
 
-    print('\n')
-    print (questao_para_texto(questao, id))
-    resposta = input('\nQual sua resposta?! ')
+      print('\n')
+      print (questao_para_texto(questao, id))
+      resposta = input('\nQual sua resposta?! ')
 
-    if resposta == questao['correta']:
-        print ('\nParabéns, você acertou!')
+      if resposta == questao['correta']:
+          print ('\nParabéns, você acertou!')
 
-    elif resposta == 'pula':
-      break
-
-    elif resposta == 'parar':
-      x = 3
-      parar = 1 #tem que parar o jogo
-
-    while resposta == 'ajuda':
-      if ajudas < 2:
-        ajudas+=1
-        print('\n')
-        print (gera_ajuda (questao)) #tem que repetir a questão
-        input ('\nAperte ENTER para continuar... ')
-        print('\n')
-        print (questao_para_texto(questao, id))
-        resposta = input('\nQual sua resposta?! ')
-      else:
-        print ('\nVocê não tem mais ajudas!')
-        print ('\n')
+      elif resposta == 'pula':
         break
 
-    while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar':
-        print ('\nResposta inválida!')
-        print('\n')
-        input ('Aperte ENTER para continuar... ')
-        print('\n')
-        print (questao_para_texto(questao, id))
-        resposta = input('\nQual sua resposta?! ')
+      elif resposta == 'parar':
+        x = 3
+        parar = 1 #tem que parar o jogo
 
-    input ('Aperte ENTER para continuar... ')
+      while resposta == 'ajuda':
+        if ajudas < 2:
+          ajudas+=1
+          print('\n')
+          print (gera_ajuda (questao)) #tem que repetir a questão
+          input ('\nAperte ENTER para continuar... ')
+          print('\n')
+          print (questao_para_texto(questao, id))
+          resposta = input('\nQual sua resposta?! ')
+        else:
+          print ('\nVocê não tem mais ajudas!')
+          print ('\n')
+          break
+
+      while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar':
+          print ('\nResposta inválida!')
+          print('\n')
+          input ('Aperte ENTER para continuar... ')
+          print('\n')
+          print (questao_para_texto(questao, id))
+          resposta = input('\nQual sua resposta?! ')
+
+      input ('Aperte ENTER para continuar... ')
 
 # NIVEL DIFÍCIL ------------------------------------------------------------------------
 
@@ -415,48 +416,48 @@ if quest_corretas == {}:
     nivel = 'dificil'
     x = 0
     
-  while x < 3:
-    id+=1
-    x += 1
+    while x < 3:
+      id+=1
+      x += 1
 
-    questao = sorteia_questao_inedida (questoes, nivel, questoes_sorteadas)
+      questao = sorteia_questao_inedida (questoes, nivel, questoes_sorteadas)
 
-    print('\n')
-    print (questao_para_texto(questao, id))
-    resposta = input('\nQual sua resposta?! ')
+      print('\n')
+      print (questao_para_texto(questao, id))
+      resposta = input('\nQual sua resposta?! ')
 
-    if resposta == questao['correta']:
-        print ('\nParabéns, você acertou!')
+      if resposta == questao['correta']:
+          print ('\nParabéns, você acertou!')
 
-    elif resposta == 'pula':
-      break
-
-    elif resposta == 'parar':
-      x = 3
-      parar = 1 #tem que parar o jogo
-
-    while resposta == 'ajuda':
-      if ajudas < 2:
-        ajudas+=1
-        print('\n')
-        print (gera_ajuda (questao)) #tem que repetir a questão
-        input ('\nAperte ENTER para continuar... ')
-        print('\n')
-        print (questao_para_texto(questao, id))
-        resposta = input('\nQual sua resposta?! ')
-      else:
-        print ('\nVocê não tem mais ajudas!')
-        print ('\n')
+      elif resposta == 'pula':
         break
 
-    while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar':
-        print ('\nResposta inválida!')
-        print('\n')
-        input ('Aperte ENTER para continuar... ')
-        print('\n')
-        print (questao_para_texto(questao, id))
-        resposta = input('\nQual sua resposta?! ')
+      elif resposta == 'parar':
+        x = 3
+        parar = 1 #tem que parar o jogo
 
-    input ('\nAperte ENTER para continuar... ')
+      while resposta == 'ajuda':
+        if ajudas < 2:
+          ajudas+=1
+          print('\n')
+          print (gera_ajuda (questao)) #tem que repetir a questão
+          input ('\nAperte ENTER para continuar... ')
+          print('\n')
+          print (questao_para_texto(questao, id))
+          resposta = input('\nQual sua resposta?! ')
+        else:
+          print ('\nVocê não tem mais ajudas!')
+          print ('\n')
+          break
+
+      while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar':
+          print ('\nResposta inválida!')
+          print('\n')
+          input ('Aperte ENTER para continuar... ')
+          print('\n')
+          print (questao_para_texto(questao, id))
+          resposta = input('\nQual sua resposta?! ')
+
+      input ('\nAperte ENTER para continuar... ')
 
   print ('\nParabéns! Você chegou ao fim do jogo!')
