@@ -1,7 +1,4 @@
-#FALTA COLOCAR PONTUACAO
-#ENCERRAR O JOGO QUANDO ERRA (?)
 #COLORIR O TERMINAL
-
 
 import random
 
@@ -229,7 +226,7 @@ def transforma_base (questoes):
     return saida
 
 lista = valida_questoes (questoes)
-if lista.count({}) == len(lista):
+if lista.count({}) == len(lista): 
   quest_corretas = {}
 
 else:
@@ -297,7 +294,7 @@ if quest_corretas == {}:
           else:
             i = i
       return '''DICA:\nOpções certamente erradas: {} | {}'''.format(questoes_sorteadas[0], questoes_sorteadas[1])
-
+  
   questoes_sorteadas = []
   id = 0
   parar = 0
@@ -317,9 +314,16 @@ if quest_corretas == {}:
     print('\n')
     print (questao_para_texto(questao, id))
     resposta = input('\nQual sua resposta?! ')
-
-    if resposta == questao['correta']:
-        print ('\nParabéns, você acertou!')
+    
+    if resposta == 'A' or resposta == 'B' or resposta == 'C' or resposta == 'D':
+      if resposta == questao['correta']:
+          print ('\nParabéns, você acertou!')
+      else:
+        x = 3
+        parar = 1
+        print ('\nQue pena, você errou!')
+        print('\nA resposta correta é a letra {}.'.format(questao['correta']))
+        print('\nO jogo será finalizado...')
 
     elif resposta == 'pula':
       break
@@ -339,16 +343,18 @@ if quest_corretas == {}:
         resposta = input('\nQual sua resposta?! ')
       else:
         print ('\nVocê não tem mais ajudas!')
+        print('\nA resposta correta é a letra {}.'.format(questao['correta']))
+        print('\nVamos para a próxima questão!')
         print ('\n')
         break
 
-    while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar':
-        print ('\nResposta inválida!')
-        print('\n')
-        input ('Aperte ENTER para continuar... ')
-        print('\n')
-        print (questao_para_texto(questao, id))
-        resposta = input('\nQual sua resposta?! ')
+    while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar' and resposta != 'pula' and resposta != 'A' and resposta != 'B' and resposta != 'C' and resposta != 'D':
+      print ('\nResposta inválida!')
+      print('\n')
+      input ('Aperte ENTER para continuar... ')
+      print('\n')
+      print (questao_para_texto(questao, id))
+      resposta = input('\nQual sua resposta?! ')
 
     input ('Aperte ENTER para continuar... ')
 
@@ -371,9 +377,16 @@ if quest_corretas == {}:
       print('\n')
       print (questao_para_texto(questao, id))
       resposta = input('\nQual sua resposta?! ')
-
-      if resposta == questao['correta']:
-          print ('\nParabéns, você acertou!')
+      
+      if resposta == 'A' or resposta == 'B' or resposta == 'C' or resposta == 'D':
+        if resposta == questao['correta']:
+            print ('\nParabéns, você acertou!')
+        else:
+          x = 3
+          parar = 1
+          print ('\nQue pena, você errou!')
+          print('\nA resposta correta é a letra {}.'.format(questao['correta']))
+          print('\nO jogo será finalizado...')
 
       elif resposta == 'pula':
         break
@@ -393,16 +406,18 @@ if quest_corretas == {}:
           resposta = input('\nQual sua resposta?! ')
         else:
           print ('\nVocê não tem mais ajudas!')
+          print('\nA resposta correta é a letra {}.'.format(questao['correta']))
+          print('\nVamos para a próxima questão!')
           print ('\n')
           break
 
-      while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar':
-          print ('\nResposta inválida!')
-          print('\n')
-          input ('Aperte ENTER para continuar... ')
-          print('\n')
-          print (questao_para_texto(questao, id))
-          resposta = input('\nQual sua resposta?! ')
+      while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar' and resposta != 'pula' and resposta != 'A' and resposta != 'B' and resposta != 'C' and resposta != 'D':
+        print ('\nResposta inválida!')
+        print('\n')
+        input ('Aperte ENTER para continuar... ')
+        print('\n')
+        print (questao_para_texto(questao, id))
+        resposta = input('\nQual sua resposta?! ')
 
       input ('Aperte ENTER para continuar... ')
 
@@ -425,9 +440,16 @@ if quest_corretas == {}:
       print('\n')
       print (questao_para_texto(questao, id))
       resposta = input('\nQual sua resposta?! ')
-
-      if resposta == questao['correta']:
-          print ('\nParabéns, você acertou!')
+      
+      if resposta == 'A' or resposta == 'B' or resposta == 'C' or resposta == 'D':
+        if resposta == questao['correta']:
+            print ('\nParabéns, você acertou!')
+        else:
+          x = 3
+          parar = 1
+          print ('\nQue pena, você errou!')
+          print('\nA resposta correta é a letra {}.'.format(questao['correta']))
+          print('\nO jogo será finalizado...')
 
       elif resposta == 'pula':
         break
@@ -447,17 +469,19 @@ if quest_corretas == {}:
           resposta = input('\nQual sua resposta?! ')
         else:
           print ('\nVocê não tem mais ajudas!')
+          print('\nA resposta correta é a letra {}.'.format(questao['correta']))
+          print('\nVamos para a próxima questão!')
           print ('\n')
           break
 
-      while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar':
-          print ('\nResposta inválida!')
-          print('\n')
-          input ('Aperte ENTER para continuar... ')
-          print('\n')
-          print (questao_para_texto(questao, id))
-          resposta = input('\nQual sua resposta?! ')
+      while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar' and resposta != 'pula' and resposta != 'A' and resposta != 'B' and resposta != 'C' and resposta != 'D':
+        print ('\nResposta inválida!')
+        print('\n')
+        input ('Aperte ENTER para continuar... ')
+        print('\n')
+        print (questao_para_texto(questao, id))
+        resposta = input('\nQual sua resposta?! ')
 
-      input ('\nAperte ENTER para continuar... ')
+      input ('Aperte ENTER para continuar... ')
 
   print ('\nParabéns! Você chegou ao fim do jogo!')
