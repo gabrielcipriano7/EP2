@@ -165,6 +165,7 @@ questoes = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Uma banda de Rock', 'B': 'Uma marca de luxo', 'C': 'Cidade Francesa', 'D': 'Morte de tecido orgânico'},
           'correta': 'D'}
+         
         ]
 
 def valida_questoes (questoes):
@@ -240,7 +241,7 @@ if quest_corretas == {}:
 
   questoes = transforma_base (questoes)
 
-  print("\033[31mOlá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!\033[m")
+  print("\033[31mOlá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer! Finalize o jogo e ganhe 1.000.000 de reais!!!\033[m")
   nome = input('Qual o seu nome? ')
   print('\n')
   print ('Ok {0}, serão 3 questões de cada nível (fácil, médio e dificil). \nVocê tem direito a pular 3 vezes e a pedir 2 ajudas!'.format(nome))
