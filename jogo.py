@@ -2,6 +2,10 @@
 
 import random
 
+class ANSI():   
+    def color_text(code): 
+        return "\33[{code}m".format(code=code)
+
 questoes = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
           'opcoes': {'A': '-19', 'B': '85', 'C': '89', 'D': '99'},
@@ -236,7 +240,7 @@ if quest_corretas == {}:
 
   questoes = transforma_base (questoes)
 
-  print('Olá! Bem-vindo ao jogo!')
+  print("\033[31mOlá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!\033[m")
   nome = input('Qual o seu nome? ')
   print('\n')
   print ('Ok {0}, serão 3 questões de cada nível (fácil, médio e dificil). \nVocê tem direito a pular 3 vezes e a pedir 2 ajudas!'.format(nome))
@@ -249,7 +253,7 @@ if quest_corretas == {}:
   print('\n')
   print('Vamos começar pelo nível fácil!')
   print('\n')
-  input ('Aperte ENTER para continuar... ')
+  input ('\033[31mAperte ENTER para continuar...\033[m')
 
   def sorteia_questao_inedida (questoes, nivel, questoes_sorteadas):
       
@@ -337,7 +341,7 @@ if quest_corretas == {}:
         ajudas+=1
         print('\n')
         print (gera_ajuda (questao)) #tem que repetir a questão
-        input ('\nAperte ENTER para continuar... ')
+        input ('\033[31mAperte ENTER para continuar...\033[m')
         print('\n')
         print (questao_para_texto(questao, id))
         resposta = input('\nQual sua resposta?! ')
@@ -351,19 +355,19 @@ if quest_corretas == {}:
     while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar' and resposta != 'pula' and resposta != 'A' and resposta != 'B' and resposta != 'C' and resposta != 'D':
       print ('\nResposta inválida!')
       print('\n')
-      input ('Aperte ENTER para continuar... ')
+      input ('\033[31mAperte ENTER para continuar...\033[m')
       print('\n')
       print (questao_para_texto(questao, id))
       resposta = input('\nQual sua resposta?! ')
 
-    input ('Aperte ENTER para continuar... ')
+    input ('\033[31mAperte ENTER para continuar...\033[m')
 
   # NIVEL MÉDIO ------------------------------------------------------------------------
 
   if parar != 1: 
 
     print('\nVamos agora para as de nível médio!')
-    input ('\nAperte ENTER para continuar... ')
+    input ('\033[31m\nAperte ENTER para continuar...\033[m')
 
     nivel = 'medio'
     x = 0
@@ -400,7 +404,7 @@ if quest_corretas == {}:
           ajudas+=1
           print('\n')
           print (gera_ajuda (questao)) #tem que repetir a questão
-          input ('\nAperte ENTER para continuar... ')
+          input ('\033[31mAperte ENTER para continuar...\033[m')
           print('\n')
           print (questao_para_texto(questao, id))
           resposta = input('\nQual sua resposta?! ')
@@ -419,14 +423,14 @@ if quest_corretas == {}:
         print (questao_para_texto(questao, id))
         resposta = input('\nQual sua resposta?! ')
 
-      input ('Aperte ENTER para continuar... ')
+      input ('\033[31mAperte ENTER para continuar...\033[m')
 
 # NIVEL DIFÍCIL ------------------------------------------------------------------------
 
   if parar != 1: 
 
     print('\nVamos agora para as de nível difícil!')
-    input ('\nAperte ENTER para continuar... ')
+    input ('\033[31mAperte ENTER para continuar...\033[m')
 
     nivel = 'dificil'
     x = 0
@@ -463,7 +467,7 @@ if quest_corretas == {}:
           ajudas+=1
           print('\n')
           print (gera_ajuda (questao)) #tem que repetir a questão
-          input ('\nAperte ENTER para continuar... ')
+          input ('\033[31mAperte ENTER para continuar...\033[m')
           print('\n')
           print (questao_para_texto(questao, id))
           resposta = input('\nQual sua resposta?! ')
@@ -477,11 +481,11 @@ if quest_corretas == {}:
       while resposta != questao['correta'] and resposta != 'ajuda' and resposta != 'parar' and resposta != 'pula' and resposta != 'A' and resposta != 'B' and resposta != 'C' and resposta != 'D':
         print ('\nResposta inválida!')
         print('\n')
-        input ('Aperte ENTER para continuar... ')
+        input ('\033[31mAperte ENTER para continuar...\033[m')
         print('\n')
         print (questao_para_texto(questao, id))
         resposta = input('\nQual sua resposta?! ')
 
-      input ('Aperte ENTER para continuar... ')
+      input ('\033[31mAperte ENTER para continuar...\033[m')
 
   print ('\nParabéns! Você chegou ao fim do jogo!')
